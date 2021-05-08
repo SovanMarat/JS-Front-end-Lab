@@ -1,10 +1,119 @@
 * {
   margin: 0 auto;
   padding: 0;
+  color: white;
+  font-family: "Netflix Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .wrapper {
-  background-color: black;
+  background-color: #222;
   width: 100vw;
+  /* height: 100vh; */
+}
+
+.wrapper-films {
+  background-image: url(./img/wr_footer.jpg);
+  background-size: cover;
+}
+
+.wrapper-films_dark {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.264);
+  box-shadow: inset 10px 10px 130px 70px black;
+}
+
+.logo {
+  background-image: url(./img/Netflix_2015_logo.svg);
+  background-size: cover;
+  width: 150px;
+  height: 40px;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+}
+
+.movies-subscription {
+  width: 100%;
   height: 100vh;
+  padding-bottom: 5px;
+}
+
+.tv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  margin-top: 8px;
+  padding: 30px 10px;
+}
+.tv__content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.tv__img {
+  background-image: url(./img/tv.png);
+  background-size: cover;
+  width: 500px;
+  height: 400px;
+}
+
+.watch-offline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  margin-top: 8px;
+  padding: 30px 10px;
+}
+
+.watch-offline__img {
+  background-image: url(./img/mobile-0819.jpg);
+  background-size: cover;
+  width: 500px;
+  height: 400px;
+}
+
+.watch-everywhere {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  margin-top: 8px;
+  padding: 30px 10px;
+}
+
+.watch-everywhere__content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.watch-everywhere__img {
+  background-image: url(./img/device-pile.png);
+  background-size: cover;
+  width: 500px;
+  height: 400px;
+}
+
+.kids-profiles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  margin: 8px 0;
+  padding: 30px 10px;
+}
+
+.kids-profiles__content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.kids-profiles__img {
+  background-image: url(./img/kidsProfiles.png);
+  background-size: cover;
+  width: 500px;
+  height: 400px;
 }
