@@ -1,8 +1,8 @@
 * {
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   color: white;
-  font-family: "Netflix Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 .wrapper {
@@ -21,12 +21,15 @@
   background-color: rgba(0, 0, 0, 0.264);
   box-shadow: inset 10px 10px 130px 70px black;
 }
-
+.header {
+  display: flex;
+  padding: 30px 60px;
+}
 .logo {
   background-image: url(./img/Netflix_2015_logo.svg);
   background-size: cover;
-  width: 150px;
-  height: 40px;
+  width: 170px;
+  height: 45px;
 }
 
 .main {
@@ -35,14 +38,50 @@
 }
 
 .movies-subscription {
-  width: 100%;
+ max-width: 100%;
   height: 100vh;
   padding-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.movies-subscription__title {
+ max-width: 740px;
+font-size: 4rem;
+text-align: center;
+}
+.email-form__box {
+  display: flex;
+}
+.email-form__input {
+  height: 60px;
+  width: 450px;
+  padding: 0 10px;
 }
 
+.email-form__btn {
+  background-color: #e50914;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 214px;
+  height: 64px;
+}
+
+.movies-subscription__subtitle {
+  padding: 15px;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.movies-subscription__subsubtitle {
+  padding: 15px;
+  font-weight: 500;
+}
 .tv {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   background-color: black;
   margin-top: 8px;
@@ -62,7 +101,7 @@
 
 .watch-offline {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   background-color: black;
   margin-top: 8px;
@@ -78,7 +117,7 @@
 
 .watch-everywhere {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   background-color: black;
   margin-top: 8px;
@@ -99,7 +138,7 @@
 
 .kids-profiles {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   background-color: black;
   margin: 8px 0;
@@ -116,4 +155,44 @@
   background-size: cover;
   width: 500px;
   height: 400px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  padding: 30px;
+  align-items: start;
+}
+
+.footer__title {
+  display: flex;
+  flex-direction: column;
+
+  margin: 20px 30px;
+}
+
+ul {
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+  margin: 10px 30px;
+  font-size: 13px;
+ }
+
+a {
+  text-decoration: none;
+  color: #757575;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.first-list {
+display: grid;
+grid-template-rows: 1fr 1fr 1fr 1fr;
+grid-template-columns: 1fr 1fr 1fr 1fr;
 }
