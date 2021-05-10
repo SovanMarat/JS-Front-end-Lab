@@ -149,7 +149,6 @@
 .tv__img {
   background-image: url(./img/tv.png);
   z-index: 2;
-
 }
 
 .watch-offline__img {
@@ -175,16 +174,10 @@
 .footer__title {
   display: flex;
   flex-direction: column;
-
   margin: 20px 30px;
 }
 
-ul {
-  margin: 20px 0;
-  padding-inline-start: 0;
-}
-
-li {
+.footer-list{
   list-style-type: none;
   margin: 16px 95px 0 0;
   font-size: 13px;
@@ -205,4 +198,133 @@ a:hover {
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   text-align: start;
+  margin: 20px 0;
+  padding-inline-start: 0;
+}
+
+@media screen and (max-width: 756px) {
+
+  * {
+    font-size: 12px;
+  }
+
+.email-form__box {
+  width: 400px;
+}
+
+.email-form__btn {
+font-size: 1.5rem;
+}
+
+.picture-block {
+margin: 0;
+width: 50%;
+}
+
+.tv__content-title,
+.watch-offline__content-title,
+.watch-everywhere__content-title,
+.kids-profiles__content-title {
+  font-size: 2.1rem;
+}
+
+  .footer {
+    padding: 10px 0;
+    }
+
+  .footer-list{
+    margin: 10px 50px 0 0;
+  }
+
+}
+
+@media screen and (max-width: 460px) {
+  * {
+    font-size: 10px;
+  }
+
+  .logo {
+    width: 85px;
+    height: 23px;
+  }
+
+  .email-form__box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .email-form__input {
+    height: 40px;
+    width: 300px;
+  }
+
+  .email-form__btn {
+    width: 150px;
+    height: 40px;
+    margin-top: 10px;
+  }
+
+  .tv,
+  .watch-everywhere {
+    flex-direction: column;
+    padding: 60px 10px;
+  }
+
+  .watch-offline,
+  .kids-profiles {
+    flex-direction: column-reverse;
+    padding: 60px 10px;
+  }
+
+  .tv__content,
+  .watch-offline__content,
+  .watch-everywhere__content,
+  .kids-profiles__content {
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tv__content-subtitle,
+  .watch-offline__content-subtitle,
+  .watch-everywhere__content-subtitle,
+  .kids-profiles__content-subtitle {
+    text-align: center;
+  }
+
+  .tv__content-title,
+  .watch-offline__content-title,
+  .watch-everywhere__content-title,
+  .kids-profiles__content-title {
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  .picture-block {
+    width: 80%;
+    height: 250px;
+  }
+
+  .video-content {
+    width: 68%;
+  }
+
+  .questions {
+    display: none;
+  }
+
+.footer {
+padding: 5px 0;
+}
+
+  .first-list {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: start;
+  }
+
+  .footer-list{
+    margin: 10px 30px 0 0;
+  }
 }
