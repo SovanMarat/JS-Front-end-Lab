@@ -1,21 +1,23 @@
-# JS/FE PDP
+## JS/FE PDP
 
-## HTML
+---
 
-- HTML Introduction / Basic information 
-- Doctype elements / HTML and XHTML syntax differences
-- Browser modes
-- Layout tags / HTML 5 structural / Semantic tags
-- HTML tag attributes
-- Specific tag Head / Meta tags / Page encoding / Viewport property
-- Internal and external scripts (styles) / Load order
-- Page structure
-- Forms / Tags and attributes in forms / Input types
-- Semantic / Semantic tags (Elements)
-- Types of layout: fixed, fluid, elastic, hybrid, absolute, responsive, adaptive, parallax
+### **[HTML](./HTML/README.md)**
 
+- **HTML Introduction** (Basic information)
+- **Doctype elements** (Doctype, HTML and XHTML syntax differences)
+- **Browser modes**
+- **HTML structural** (Page structure / Layout tags / HTML 5 Structure / APIs of HTML documents)
+- **Specific tags** (Tags in Head / Meta tags / Page encoding / Viewport property)
+- **Semantic** (Semantics tags / Elements)
+- **HTML tag attributes** (New HTML 5 attr.. / -data..)
+- **Internal and external scripts/libs/assets/files/styles** (Load order / async & defer in tag script)
+- **Tag Form** (What is Form mean? / Tags and attributes in forms / Input types
+- **Types of layout** (fixed, fluid, elastic, hybrid, absolute, responsive, adaptive, parallax)
 
-## CSS
+---
+
+### CSS
 
 - Syntax, properties and capabilities etc.
 - Special states and parts of elements
@@ -33,8 +35,7 @@
 - Adaptive Web Design (AWD)
 - Mobile approaches (mobile first, progressive enhancement, graceful degradation)
 
-
-### DOM
+### **[DOM](./DOM/README.md)**
 
 - What is DOM / Intro
 - DOM traversing / Methods / Nodes / Adding and removing nodes / Document fragment
@@ -43,7 +44,6 @@
 - Animations
 - Navigation
 - Collections / Node Lists
-
 
 ### BOM
 
@@ -58,6 +58,7 @@
 - Cookies
 
 ---
+
 ## JS
 
 ### Core
@@ -68,17 +69,16 @@
 - Functions (declaration/expression/arrow)
 - Function context, scope, [arguments]; closures
 - Loops, conditions
-- Prototype inheritance (__ptoto__, class keyword)
-
+- Prototype inheritance (**ptoto**, class keyword)
 
 ### ES5 features
+
 - Strict mode "Use strict"
 - New methods of string: String.trim()
 - New methods of arrays: Array.isArray() / Array.forEach() / Array.map() / Array.filter() / Array.reduce() / Array.every() / Array.some() / Array.indexOf() / etc
 - New methods for work with JSON
 - Date.now()
 - TODO
-
 
 ### ES2015 (ES6) features
 
@@ -98,20 +98,18 @@
 - Object Destructuring – learn how to assign properties of an object to variables.
 - ES6 modules – learn how to write modular JavaScript code.
 
-
 ## General topics
 
 - HTTP: status codes, methods, headers
 - Clean code: coding and naming conventions, what is linters
 - Computer science fundamentals
-    - Data structures: stack, array, linked list, queue, bag
-    - Basic algorithms
-    - Algorithms complexity basics
+  - Data structures: stack, array, linked list, queue, bag
+  - Basic algorithms
+  - Algorithms complexity basics
 - Git basics
 - Unit testing basics
 - Dev tools
 - What is agile
-
 
 ### Frameworks
 
