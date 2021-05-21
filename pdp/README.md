@@ -56,6 +56,7 @@
 - Popup Alert / Promt
 - Timing
 - Cookies
+- Methods alert() / prompt() / confirm()
 
 ---
 
@@ -63,8 +64,8 @@
 
 ### Core
 
-- Language basics
-- Types
+- [Language basics](https://learn.javascript.ru/intro)
+- [Types](./DATA_TYPES/README.md)
 - Objects
 - Functions (declaration/expression/arrow)
 - Function context, scope, [arguments]; closures
@@ -110,6 +111,8 @@
 - Unit testing basics
 - Dev tools
 - What is agile
+- [Troubleshooting JavaScript errors](./TROUBLESHOOTING/README.md)
+- [garbage collection](https://learn.javascript.ru/garbage-collection)
 
 ### Frameworks
 
