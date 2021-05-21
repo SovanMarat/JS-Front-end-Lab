@@ -18,6 +18,7 @@
 ---
 
 ### **Traversing elements**
+
 - **Get the parent element** – get the parent node of an element.
 - **Get child elements** – get children of an element.
 - **Get siblings of an element** – get siblings of an element.
@@ -79,15 +80,15 @@
 - **Scroll events** – how to handle scroll events effectively.
 - **scrollIntoView** – learn how to scroll an element into view.
 - **Focus Events** – cover the focus events.
-- **hashchange event** – learn how to handle the event when URL hash changes. 
-    - [Hashchange Info](https://docs.w3cub.com/dom_events/hashchange) [EN]
-    - [hashchange from MDN](https://developer.cdn.mozilla.net/ru/docs/Web/API/Window/hashchange_event) [EN]
+- **hashchange event** – learn how to handle the event when URL hash changes.
+  - [Hashchange Info](https://docs.w3cub.com/dom_events/hashchange) [EN]
+  - [hashchange from MDN](https://developer.cdn.mozilla.net/ru/docs/Web/API/Window/hashchange_event) [EN]
 - **Event Delegation** – is a technique of levering event bubbling to handle events at a higher level in the DOM than the element on which the event originated.
 - **dispatchEvent** – learn how to generate an event from code and trigger it.
 - **Custom Events** – define a custom JavaScript event and attach it to an element.
 - **MutationObserver** – monitor the DOM changes and invoke a callback when the changes occur.
 
---- 
+---
 
 ### **Scripting Web Forms**
 
@@ -100,3 +101,65 @@
 - **Handling input event** – handle the input event when the value of the input element changes.
 
 ---
+
+### Additionally
+
+##### The list of useful methods (with simple examples) for works with DOM and some notes about DOM:
+
+    - document.getElementById()
+    - document.getElementsByTagName()
+    - document.getElementsByClassName()
+    - document.querySelector()
+    - document.querySelectorAll()
+
+    - document.getElementsByTagName()
+    - document.getElementsByClassName()
+    - document.querySelector()
+    - document.querySelectorAll()
+
+    - document.getElementsByTagName('p');
+    - document.getElementsByClassName("paragraph");
+    - document.getElementById('fourth');
+    - document.querySelector("p");
+    - document.querySelectorAll("p");
+    - document.querySelectorAll("div p");
+    - document.querySelector("#fourth");
+    - document.getElementsByTagName('p');
+    - document.querySelector("div");
+    - document.getElementById('customContent');
+    - document.getElementById("main");
+    - document.createElement('div');
+    - document.getElementById('main');
+    - document.getElementById('sixth-part);
+    - document.getElementById('textTitle');
+    - document.getElementById('custom-three');
+    - document.createElement('ul');
+    - document.createElement('li');
+
+<br />
+
+| Providing difference manipulations | предоставление разностных манипуляций |
+| ---------------------------------- | ------------------------------------- |
+| generation and addition of nodes   | генерация и добавление узлов          |
+| obtaining nodes                    | получение узлов                       |
+| change nodes                       | изменение узлов                       |
+| changing links between nodes       | изменение связей между узлами         |
+| remove nodes                       | удаление узлов                        |
+
+<br />
+
+- nodeType
+- The nodeType property returns the type of node. nodeType is read only.
+- The most important node types are:
+
+| Element type  | NodeType |
+|---------------|----------|
+| Element       | 1        |
+| Attribute     | 2        |
+| Text          | 3        |
+| Comment       | 8        |
+| Document      | 9        |
+
+
+- [Main Differences with some methods](https://stackoverflow.com/questions/14377590/queryselector-and-queryselectorall-vs-getelementsbyclassname-and-getelementbyid)
+- [querySelectorAll vs getElements](https://dev.to/jasterix/queryselectorall-vs-getelements-2mnf)
