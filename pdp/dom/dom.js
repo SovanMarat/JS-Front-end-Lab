@@ -1,43 +1,73 @@
+"use strict";
+
+// Document Object Model, сокращённо DOM – объектная модель документа, которая представляет все содержимое страницы в виде объектов,
+// которые можно менять.
+// Объект document – основная «входная точка». С его помощью мы можем что-то создавать или менять на странице.
+
 //  **Selecting elements**
-const idTrain = document.getElementById("idTrain");
-console.log(idTrain);
+const idTrain = document.getElementById("idTrain"); // ссылка на объект типа Element
+const nameTrain = document.getElementsByName("nameTrain"); // NodeList
+const nameTag = document.getElementsByTagName("div"); // коллекция HTML
+const nameClass = document.getElementsByClassName("classTrain"); // коллекция HTML
+const nameSelector = document.querySelector(".classTrainNew"); // NodeList
+const nameSelectorAll = document.querySelectorAll(".classTrain"); // NodeList
+const getElementsByClassName = document.getElementsByClassName("classTrain"); // для проверки isLive
+const querySelectorAll = document.querySelectorAll(".classTrain"); // для проверки isLive
+console.log("**Selecting elements**", [
+  idTrain,
+  nameTrain,
+  nameTag,
+  nameClass,
+  nameSelector,
+  nameSelectorAll,
+  getElementsByClassName,
+  querySelectorAll
+]);
 
-const nameTrain = document.getElementsByName("nameTrain");
-console.log(nameTrain);
+// Function               | Live? | Type           | Time Complexity
+// querySelector          |       | Element        |  O(n)
+// querySelectorAll       |   N   | NodeList       |  O(n)
+// getElementById         |       | Element        |  O(1)
+// getElementsByClassName |   Y   | HTMLCollection |  O(1)
+// getElementsByTagName   |   Y   | HTMLCollection |  O(1)
+// getElementsByName      |   Y   | NodeList       |  O(1)
 
-const nameTag = document.getElementsByTagName("div");
-console.log(nameTag);
+// HTMLCollection - нельзя пройти forEach (можно проходить for или [...HTMLCollection].forEach), NodeList - можно пройти forEach.
+// getElement * вызывает возвратные коллекции ссылок, тогда как результаты querySelectorAll содержат копии элементов.
+// можно querySelectorAll(#id .class tag)- например, все элементы списка произошли от элемента, который является членом класса foo: querySelectorAll(.foo li)
 
-const nameClass = document.getElementsByClassName("classTrain");
-console.log(nameClass);
-
-const nameSelector = document.querySelector(".classTrainNew"); // почему исользуют querySelector, ведь getElementsByClassName работает быстрее?
-console.log(nameSelector);
-
-const nameSelectorAll = document.querySelectorAll(".classTrain");
-console.log(nameSelectorAll);
+// проверка isLive (добавленный элемент будет только в getElementsByClassName, в querySelectorAll, его не будет)
+const test = document.getElementById("clickGreen"); 
+const newEl = document.createElement("div");
+newEl.className = "classTrain newEl";
+newEl.textContent = "newEl";
+test.append(newEl);
 
 // **Traversing elements**
-console.log(nameTrain[0].parentElement); // родитель элемент
-console.log(nameTrain[0].parentNode); // родитель узел
-
-console.log(idTrain.children); // дочерние элементы
-console.log(idTrain.childNodes); // дочерние элементы
-
-console.log(nameSelector.nextSibling); // след брат-узел
-console.log(nameSelector.previousSibling); // пред брат-узел
-
-console.log(nameSelector.nextElementSibling); // след брат-элем
-console.log(nameSelector.previousElementSibling); // пред брат-элем
+console.log("**Traversing elements**", [
+  nameTrain[0].parentElement, // родитель элемент
+  nameTrain[0].parentNode, // родитель узел
+  idTrain.children, // дочерние элементы
+  idTrain.childNodes, // дочерние nodes
+  nameSelector.nextSibling, // след брат-узел
+  nameSelector.previousSibling, // пред брат-узел
+  nameSelector.nextElementSibling, // след брат-элем
+  nameSelector.previousElementSibling, // пред брат-элем
+]);
 
 //  **Manipulating elements**
+console.log("**Manipulating elements**");
 const newElement = document.createElement("div");
-newElement.className = "newElement";
+newElement.className = "nameTrain newElement";
 newElement.textContent = "newElement";
 idTrain.append(newElement);
 console.log(newElement.textContent);
 console.log(newElement.innerHTML);
-newElement.innerHTML = "<li style=color:red>6</li>";
+console.log(newElement.innerText);
+newElement.innerHTML =  `<li style="color:red">6</li><span style="display: none"> Hide </span>`;
+console.log('textContent: ', newElement.textContent); // возвращает весь текст, содержащийся в узле
+console.log('innerHTML: ', newElement.innerHTML); // возвращает всё содержимое
+console.log('innerText: ', newElement.innerText); // возвращает видимый текст, содержащийся в узле
 
 function getListContent() {
   let fragment = new DocumentFragment();
@@ -58,10 +88,10 @@ idTrain.insertBefore(newElement2, nameTrain[0]); // добавляет элем�
 // const ul = document.querySelector("ul");
 // console.log(ul)
 // document.body.replaceChild(idTrain, ul) замена ul на idTrain
-
 // idTrain.removeChild(nameTrain[0]); удаляем nameTrain[0] из idTrain
 
 // **Working with Attributes**
+console.log("**Working with Attributes**");
 nameSelector.setAttribute("id", "newId");
 console.log(nameSelector.getAttribute("id"));
 console.log(nameSelector.hasAttribute("id"));
@@ -70,7 +100,7 @@ console.log(nameSelector.getAttribute("id"));
 console.log(nameSelector.hasAttribute("id"));
 
 // **Manipulating Element’s Styles**
-
+console.log("**Manipulating Element’s Styles**");
 console.log(nameSelector.className);
 nameSelector.classList.add("addedClass");
 console.log(nameSelector.className);
@@ -79,6 +109,7 @@ const styles = getComputedStyle(nameSelector);
 console.log(styles);
 
 // **Working with Events**
+console.log("**Working with Events**");
 
 const btn = document.querySelector(".btn");
 
@@ -171,23 +202,39 @@ observer.observe(clickGreen, {
 });
 
 // **Scripting Web Forms**
+console.log("**Scripting Web Forms**");
+
 select.addEventListener("change", () => {
   console.log(select.value);
 });
 
 console.log(form.login);
-
 form.login.addEventListener("input", () => {
   console.log(form.login.value);
 });
-
 const square2 = document.querySelector(".square2");
-
 form.addEventListener("change", () => {
   square2.style.background = form.currentColor.value;
 });
-
 const opt = document.createElement("option");
-            opt.value = "pineapple";
-            opt.innerHTML = "ананас";
-            select.appendChild(opt);
+opt.value = "pineapple";
+opt.innerHTML = "ананас";
+select.appendChild(opt);
+for (let i = 0; i < idTrain.children.length; i++) {
+  console.log(idTrain.children[i]);
+}
+
+// **free training 
+const arr = [...idTrain.children];
+console.log(arr);
+
+arr.forEach((e) => {
+  console.log(`el`, e);
+});
+
+// setTimeout
+const addAtrTimeot = function addAtrTimeot () {
+  square2.style.background = "red";
+  nameSelector.classList.add("timeout");
+};
+setTimeout(addAtrTimeot, 3000);
