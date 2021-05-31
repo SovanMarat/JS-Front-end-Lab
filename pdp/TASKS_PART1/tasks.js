@@ -9,19 +9,28 @@ console.log("#10", avtoPark); // { name: 'Lada' } - т.к. элемент мас
 
 // ** Array (Вернуть параметры наименьшего элемента в массиве) #11
 const getMinItemParam = (arr) => {
-  const minItem = { index: 0, value: arr[0] };
-  arr.forEach((e, i) => {
-    if (e < minItem.value) {
-      minItem.index = i;
-      minItem.value = e;
-    }
-  });
-  return minItem;
+  if (arr.every((e) => typeof e === "number") && arr.length > 0) {
+    const minItem = { index: 0, value: arr[0] };
+    arr.forEach((e, i) => {
+      if (e < minItem.value) {
+        minItem.index = i;
+        minItem.value = e;
+      }
+    });
+    return minItem;
+  }
+  console.log("массив должен содержать числа");
+  return null;
 };
 console.info("#11 test getMinItemParam", [
   getMinItemParam([1, 0, 2, 3]),
   getMinItemParam([90000, 15, 100, 45, 99, 13, 2]),
   getMinItemParam([-500, 0, 50]),
+  getMinItemParam(["f"]),
+  getMinItemParam([false]),
+  getMinItemParam([""]),
+  getMinItemParam([null]),
+  getMinItemParam([]),
 ]);
 
 // ** Array [Управление парами] #12
@@ -38,11 +47,11 @@ console.info("#12 test makePair", [
 ]);
 
 // ** Array [Reverse an Array] #13
-const reverse = (arr) => arr.reverse();
+const getReverseArray = (arr) => arr.reverse();
 console.info("#13 test reverse", [
-  reverse([1, 2, 3, 4]),
-  reverse([9, 9, 2, 3, 4]),
-  reverse([]),
+  getReverseArray([1, 2, 3, 4]),
+  getReverseArray([9, 9, 2, 3, 4]),
+  getReverseArray([]),
 ]);
 
 // ** Operator - typeof Examples #14
@@ -116,34 +125,50 @@ const persons = [
   { id: 1, name: "Karl", age: 24, group: "editor" },
   { id: 2, name: "Poul", age: 32, group: "admin" },
   { id: 3, name: "John", age: 42, group: "editor" },
-  { id: 4, name: "Mark", age: 25, group: "admin" },
+  { id: 4, name: "Mark", age: 26, group: "admin" },
 ];
-const adminAr = (arr) => {
-  let result = [];
-  arr.forEach((obj) => {
-    if (obj.group === "admin" && obj.name.includes("ar")) {
-      result.push(obj.name);
-    }
-  });
+const findAdminAr = (arr) => {
+  // let result = [];
+  // arr.forEach((obj) => {
+  //   if (obj.group === "admin" && obj.name.includes("ar")) {
+  //     result.push(obj.name);
+  //   }
+  // });
+  let result;
+  if (arr.length > 0) {
+    result = arr.filter((e) => e.group === "admin" && e.name.includes("ar"));
+  }
   return result;
 };
-console.info("#17 test persons", adminAr(persons));
+console.info("#17 test persons", findAdminAr(persons));
 
 // ** Array [Flattening an array of arrays] #18
 const funFlat = (arr) => arr.flat();
+// v. 2
+const funFlat2 = (arr) => {
+  return [].concat(...arr);
+};
+// v. 3
+const funFlat3 = (arr) =>
+  arr.reduce((prev, current) => prev.concat(current), []);
+
 const nested = [
   [1, 2, 3],
   [4, 5, 6],
   [7, 8, 9],
 ];
-console.info("#18 test funFlat", funFlat(nested));
+console.info("#18 test funFlat", [
+  funFlat(nested),
+  funFlat2(nested),
+  funFlat3(nested),
+]);
 
 // ** Array [ Intersection A and B of arrays] #19
 const getIntersection = (arrA, arrB) => {
   let result = [];
-  const setA = new Set(arrA);
-  arrB.forEach((e) => {
-    if (setA.has(e)) {
+  const setB = new Set(arrB);
+  arrA.forEach((e) => {
+    if (setB.has(e)) {
       result.push(e);
     }
   });
@@ -152,3 +177,11 @@ const getIntersection = (arrA, arrB) => {
 const arr1 = [7, 1, 77, 0, 4, 3, 2];
 const arr2 = [13, 5, 2, 6, 7, 1];
 console.info("#19 test getIntersection", getIntersection(arr1, arr2));
+
+const getIntersection2 = (arrA, arrB) => {
+  let result = arrA.filter((e) => arrB.find((el) => e === el));
+  return result;
+};
+console.info("#19 test getIntersection2", getIntersection2(arr1, arr2));
+
+console.log("typeof null", typeof null);
