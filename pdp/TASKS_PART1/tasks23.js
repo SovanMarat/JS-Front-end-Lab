@@ -5,10 +5,11 @@
 // Sub-task - 1 (Палиндром)
 const polindrom = (str) => {
   if (typeof str === "string") {
-    if (str === str.split("").reverse().join("")) {
-      return true;
-    } else return false;
-  } else return false;
+    return (str.toLowerCase() === str.toLowerCase().split("").reverse().join("")) ? true : false;
+  }
+   else {
+    return false;
+  }
 };
 console.log("polindrom", polindrom("ab c c ba"));
 
@@ -26,8 +27,10 @@ const getMultiplesNumbers = (num) => {
 getMultiplesNumbers(15);
 
 // Sub-task - 3 (Анаграмма)
+const upgradeStr = (str) => {
+  return  str.toLowerCase().match(/[a-z а-я]/g).sort().join("");
+}
 const anagram = (str1, str2) =>
-  str1.toLowerCase().match(/[a-z]/g).sort().join("") ===
-  str2.toLowerCase().match(/[a-z]/g).sort().join("");
+upgradeStr(str1)===upgradeStr(str2);
+console.log("anagram", anagram("Азбука", "азбука"));
 
-console.log("anagram", anagram("abc111, Qwe.", "Qweabcd"));
