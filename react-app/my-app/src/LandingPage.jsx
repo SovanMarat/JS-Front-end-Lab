@@ -1,39 +1,11 @@
 import "./LandingPage.css";
+import Header from './modules/Header';
+
 
 function LandingPage() {
   return (
     <div className="wrapper">
-      <div className="wrapper-films">
-        <div className="wrapper-films_dark">
-          <div className="header">
-            <div className="logo"></div>
-          </div>
-          <main className="main">
-            <div className="movies-subscription">
-              <h1 className="movies-subscription__title">
-                Unlimited movies, TV shows, and more.
-              </h1>
-              <h3 className="movies-subscription__subtitle">
-                Watch anywhere. Cancel anytime.
-              </h3>
-              <form className="email-form">
-                <h3 className="movies-subscription__subsubtitle">
-                  Ready to watch? Enter your email to create or restart your
-                  membership.
-                </h3>
-                <div className="email-form__box">
-                  <input
-                    type="text"
-                    className="email-form__input"
-                    placeholder="Email address"
-                  />
-                  <div className="email-form__btn">Get Started &gt;</div>
-                </div>
-              </form>
-            </div>
-          </main>
-        </div>
-      </div>
+     <Header/>
       <section className="tv">
         <div className="tv__content">
           <h2 className="tv__content-title">Enjoy on your TV.</h2>
