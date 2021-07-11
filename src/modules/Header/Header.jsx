@@ -1,9 +1,12 @@
+import "./Header.css";
+
 function Header() {
   return (
       <div className="wrapper-films">
         <div className="wrapper-films_dark">
           <div className="header">
             <div className="logo"></div>
+            <div className="btnSignIn">Sign In</div>
           </div>
           <main className="main">
             <div className="movies-subscription">

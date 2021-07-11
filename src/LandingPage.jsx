@@ -1,12 +1,11 @@
 import "./LandingPage.css";
-import Header from './modules/Header';
-import Footer from './modules/Footer';
-
+import Header from "./modules/Header/Header";
+import Footer from "./modules/Footer/Footer";
 
 function LandingPage() {
   return (
     <div className="wrapper">
-     <Header/>
+      <Header />
       <section className="tv">
         <div className="tv__content">
           <h2 className="tv__content-title">Enjoy on your TV.</h2>
@@ -19,8 +18,8 @@ function LandingPage() {
           <div className="box-video">
             <video
               className="video-content"
-              autoplay=""
-              playsinline=""
+              autoPlay=""
+              playsInline=""
               muted=""
               loop=""
             >
@@ -65,7 +64,7 @@ function LandingPage() {
           </h3>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
