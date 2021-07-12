@@ -1,13 +1,9 @@
 import "./Footer.css";
 
-
-function Footer() {
+export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__title">
-        <a className="questions" href="#">
-          Questions? Contact us.
-        </a>
         <ul className="first-list">
           <li>
             <a href="#">FAQ</a>
@@ -58,6 +54,4 @@ function Footer() {
       </div>
     </footer>
   );
-}
-
-export default Footer;
+};

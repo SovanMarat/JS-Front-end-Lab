@@ -1,12 +1,14 @@
 import "./Header.css";
+import React from 'react';
 
-function Header() {
+export default function Header(props) {
+
   return (
       <div className="wrapper-films">
         <div className="wrapper-films_dark">
           <div className="header">
             <div className="logo"></div>
-            <div className="btnSignIn">Sign In</div>
+            <div className="btnSignIn" onClick={()=> props.updateData(!props.isOpenModal)}>Sign In</div>
           </div>
           <main className="main">
             <div className="movies-subscription">
@@ -35,6 +37,5 @@ function Header() {
         </div>
       </div>
   );
-}
+};
 
-export default Header;
