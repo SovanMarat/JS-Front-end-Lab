@@ -11,3 +11,6 @@
 <li> работу  с Git
 <li> потоки в HTML
 <li> БЭМ
+ 
+ 
+## [template](https://sovanmarat.github.io/JS-Front-end-Lab/pdp/template/)
