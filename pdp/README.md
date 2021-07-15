@@ -15,6 +15,7 @@
 - **Tag Form** (What is Form mean? / Tags and attributes in forms / Input types
 - **Types of layout** (fixed, fluid, elastic, hybrid, absolute, responsive, adaptive, parallax)
 
+[Template](https://sovanmarat.github.io/JS-Front-end-Lab/pdp/template/)
 ---
 
 ### CSS
