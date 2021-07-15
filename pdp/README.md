@@ -37,6 +37,7 @@
 - Mobile approaches (mobile first, progressive enhancement, graceful degradation)
 
 [Markup](https://sovanmarat.github.io/JS-Front-end-Lab/pdp/CSS/)
+---
 
 ### **[DOM](./DOM/README.md)**
 
