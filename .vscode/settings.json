@@ -1,0 +1,8 @@
+{
+  "editor.tabSize": 2,
+  "prettier.printWidth": 99,
+  "prettier.arrowParens": "avoid",
+  "prettier.jsxBracketSameLine": true,
+  "prettier.semi": false,
+  "prettier.singleQuote": true
+}

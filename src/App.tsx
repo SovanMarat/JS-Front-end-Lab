@@ -11,26 +11,24 @@ import Modal from "./modules/Modal/Modal";
 export default function App() {
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
 
-  const updateData = (value: boolean) => {
+  const changeStateModal = (value: boolean) => {
     setIsOpenModal(value);
   };
 
   return (
-    <>
-      <div className="wrapper">
-        <Header updateData={updateData} isOpenModal={isOpenModal} />
-        {isOpenModal ? (
-          <Modal updateData={updateData} isOpenModal={isOpenModal} />
-        ) : (
-          <>
-            <ContentTV />
-            <WatchOfline />
-            <WatchEverywhere />
-            <KidsProfiles />
-          </>
-        )}
-        <Footer />
-      </div>
-    </>
+    <div className="wrapper">
+      <Header changeStateModal={changeStateModal} isOpenModal={isOpenModal} />
+      {isOpenModal ? (
+        <Modal changeStateModal={changeStateModal} isOpenModal={isOpenModal} />
+      ) : (
+        <>
+          <ContentTV />
+          <WatchOfline />
+          <WatchEverywhere />
+          <KidsProfiles />
+        </>
+      )}
+      <Footer />
+    </div>
   );
 }

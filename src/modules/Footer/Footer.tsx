@@ -22,8 +22,8 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer__title">
         <ul className="first-list">
-          {listFooter.map((textList) => ( 
-             <li key={textList.toString()}>{textList}</li>
+          {listFooter.map((textList) => (
+            <li key={textList.toString()}>{textList}</li>
           ))}
         </ul>
       </div>
