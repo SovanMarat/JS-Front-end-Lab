@@ -1,0 +1,31 @@
+$colorBtn: #e50914;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 60px;
+}
+.logo {
+  background-image: url(../../img/Netflix_2015_logo.svg);
+  background-size: cover;
+  width: 170px;
+  height: 45px;
+}
+
+.btnSignIn {
+  background-color: $colorBtn;
+  width: 84px;
+  height: 34px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 460px) {
+  .btnSignIn {
+    width: 45px;
+    height: 30px;
+  }
+}

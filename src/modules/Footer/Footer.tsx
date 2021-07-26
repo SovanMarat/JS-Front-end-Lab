@@ -1,57 +1,32 @@
-import "./Footer.css";
+import "./Footer.scss";
+
+const listFooter: string[] = [
+  "FAQ",
+  "Help Center",
+  "Account",
+  "Media Center",
+  "Investor Relations",
+  "Jobs",
+  "Ways to Watch",
+  "Terms of Use",
+  "Privacy",
+  "Cookie Preferences",
+  "Corporate Information",
+  "Speed Test",
+  "Legal Notices",
+  "Netflix Originals",
+];
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__title">
         <ul className="first-list">
-          <li>
-            <a href="#">FAQ</a>
-          </li>
-          <li>
-            <a href="#">Help Center</a>
-          </li>
-          <li>
-            <a href="#">Account</a>
-          </li>
-          <li>
-            <a href="#">Media Center</a>
-          </li>
-          <li>
-            <a href="#">Investor Relations</a>
-          </li>
-          <li>
-            <a href="#">Jobs</a>
-          </li>
-          <li>
-            <a href="#">Ways to Watch</a>
-          </li>
-          <li>
-            <a href="#">Terms of Use</a>
-          </li>
-          <li>
-            <a href="#">Privacy</a>
-          </li>
-          <li>
-            <a href="#">Cookie Preferences</a>
-          </li>
-          <li>
-            <a href="#">Corporate Information</a>
-          </li>
-          <li>
-            <a href="#">Contact Us</a>
-          </li>
-          <li>
-            <a href="#">Speed Test</a>
-          </li>
-          <li>
-            <a href="#">Legal Notices</a>
-          </li>
-          <li>
-            <a href="#">Netflix Originals</a>
-          </li>
+          {listFooter.map((textList) => (
+            <li key={textList.toString()}>{textList}</li>
+          ))}
         </ul>
       </div>
     </footer>
   );
-};
+}

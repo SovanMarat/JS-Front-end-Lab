@@ -1,14 +1,15 @@
 import ReactDOM from "react-dom";
-import "./Modal.css";
+import "./Modal.scss";
 
 type ModalProps = {
-  isOpenModal: boolean,
-  updateData: (isOpenModal:boolean) => void,
-}
+  isOpenModal: boolean;
+  changeStateModal: (isOpenModal: boolean) => void;
+};
 
-export default function Modal({isOpenModal, updateData}:ModalProps) {
+export default function Modal({ isOpenModal, changeStateModal }: ModalProps) {
   const modalBox = document.createElement("div");
   document.body.append(modalBox);
+  const changeModal = () => changeStateModal(!isOpenModal);
 
   return ReactDOM.createPortal(
     <div className="wrapperModal">
@@ -28,10 +29,7 @@ export default function Modal({isOpenModal, updateData}:ModalProps) {
               name="password"
               placeholder="password"
             />
-            <div
-              className="btnSignIn start"
-              onClick={() => updateData(!isOpenModal)}
-            >
+            <div className="btnSignIn start" onClick={changeModal}>
               Sign In
             </div>
           </form>
