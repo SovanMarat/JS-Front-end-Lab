@@ -11,7 +11,7 @@ export default function Content() {
           {watchEverywhere.subtitle}
         </h3>
       </div>
-      <div className="watch-everywhere__img picture-block"></div>
+      <div className="watch-everywhere__img picture-block" />
     </section>
   );
 }
