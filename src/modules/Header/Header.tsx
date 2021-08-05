@@ -19,7 +19,7 @@ export default function Header({ isOpenModal, changeStateModal }: Props) {
     <div className="wrapper-films">
       <div className="wrapper-films_dark">
         <div className="header">
-          <div className="logo"></div>
+          <div className="logo" />
           <div className="btnSignIn" onClick={changeModal}>
             Sign In
           </div>

@@ -1,0 +1,74 @@
+module.exports = {
+  env: {
+    browser: true,
+    es6: true,
+    es2017: true,
+  },
+  extends: [
+    'airbnb',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+    'prettier/react',
+    'prettier/@typescript-eslint',
+  ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 6,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
+  plugins: ['@typescript-eslint', 'react-hooks'],
+  rules: {
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+    semi: 'off',
+    '@typescript-eslint/semi': ['error'],
+    camelcase: 'warn',
+    'import/order': 'warn',
+    'react/prop-types': 'off',
+    'react/jsx-filename-extension': [
+      'error',
+      {
+        extensions: ['.tsx', '.jsx'],
+      },
+    ],
+    'import/extensions': [
+      'error',
+      {
+        ts: 'never',
+        tsx: 'never',
+        json: 'always',
+        svg: 'never',
+      },
+    ],
+    'import/prefer-default-export': 'off',
+    '@typescript-eslint/prefer-interface': 'off',
+    'array-bracket-spacing': 'warn',
+    'object-curly-spacing': 'warn',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/ban-ts-comment': 'warn',
+    '@typescript-eslint/no-var-requires': 'warn',
+    'array-callback-return': 'warn',
+    'react/jsx-props-no-spreading': 'off',
+    'no-unused-expressions': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'global-require': 'off',
+  },
+  settings: {
+    'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
+    'import/resolver': {
+      node: {
+        path: ['src'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+  },
+};
