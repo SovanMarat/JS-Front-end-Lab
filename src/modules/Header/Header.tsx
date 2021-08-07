@@ -1,5 +1,4 @@
-import "./Header.scss";
-import React from "react";
+import './Header.scss';
 
 type Props = {
   isOpenModal: boolean;
@@ -8,10 +7,10 @@ type Props = {
 
 export default function Header({ isOpenModal, changeStateModal }: Props) {
   const content = {
-    title: "Unlimited movies, TV shows, and more.",
-    subtitle: "Watch anywhere. Cancel anytime.",
+    title: 'Unlimited movies, TV shows, and more.',
+    subtitle: 'Watch anywhere. Cancel anytime.',
     subsubtitle:
-      "Ready to watch? Enter your email to create or restart your membership.",
+      'Ready to watch? Enter your email to create or restart your membership.',
   };
   const changeModal = () => changeStateModal(!isOpenModal);
 
@@ -20,7 +19,7 @@ export default function Header({ isOpenModal, changeStateModal }: Props) {
       <div className="wrapper-films_dark">
         <div className="header">
           <div className="logo" />
-          <div className="btnSignIn" onClick={changeModal}>
+          <div role = "button"  tabIndex={0} className="btnSignIn" onClick={changeModal} onKeyDown={changeModal}>
             Sign In
           </div>
         </div>
