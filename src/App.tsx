@@ -1,28 +1,12 @@
-import './App.scss';
-import { useState } from 'react';
-import Header from './modules/Header';
-import Footer from './modules/Footer';
-import { ContentSection, FAQ } from './modules/Content';
-import Modal from './modules/Modal';
+import { Route, BrowserRouter } from 'react-router-dom';
+import MainPage from './Pages/MainPage/MainPage';
+import SearchResults from './Pages/SearchResults/SearchResults';
 
 export default function App() {
-  const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
-  const changeStateModal = (value: boolean) => {
-    setIsOpenModal(value);
-  };
-
   return (
-    <div className="wrapper">
-      <Header changeStateModal={changeStateModal} isOpenModal={isOpenModal} />
-      {isOpenModal ? (
-        <Modal changeStateModal={changeStateModal} isOpenModal={isOpenModal} />
-      ) : (
-        <>
-          <ContentSection />
-          <FAQ />
-        </>
-      )}
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Route path='/' exact component={MainPage} />
+      <Route path='/search-results' exact component={SearchResults} />
+    </BrowserRouter>
   );
 }
