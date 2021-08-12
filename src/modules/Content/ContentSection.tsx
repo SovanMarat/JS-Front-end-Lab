@@ -5,20 +5,17 @@ export default function Content() {
   return (
     <>
       {dataContent.map(({ name, title, subtitle, src, isLeft }) => (
-        <section key={name} className={isLeft ? 'section_content' : 'section_content reverse-content'}>
-          <div className={`${name}__img picture-block`}>
-          {src && (
-            <div className="box-video">
-              <video className="video-content">
-                <source src={src} type="video/mp4" />
-                <track default kind="captions" />
-              </video>
-            </div>
-          )}
+        <section key={name} className={`section-content ${isLeft && 'section-content_reverse'}`}>
+          <div className={`${name}-media picture-box`}>
+            {src && (
+              <div className='box-video'>
+                <iframe className='box-video__content' src={src} frameBorder='0' allow='autoplay' title='video' />
+              </div>
+            )}
           </div>
-          <div className="content">
-            <h2 className="content-title">{title}</h2>
-            <h3 className="content-subtitle">{subtitle}</h3>
+          <div className='content'>
+            <h2 className='content__title'>{title}</h2>
+            <h3 className='content__subtitle'>{subtitle}</h3>
           </div>
         </section>
       ))}
