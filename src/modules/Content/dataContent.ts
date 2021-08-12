@@ -1,4 +1,12 @@
-export const dataContent = [
+type TypeContent = {
+  name: string;
+  title: string;
+  subtitle: string;
+  src?: string;
+  isLeft: boolean;
+};
+
+export const dataContent: Array<TypeContent> = [
   {
     name: 'tv',
     title: 'Enjoy on your TV.',
