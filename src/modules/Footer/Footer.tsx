@@ -1,20 +1,20 @@
-import "./Footer.scss";
+import './Footer.scss';
 
 const listFooter: string[] = [
-  "FAQ",
-  "Help Center",
-  "Account",
-  "Media Center",
-  "Investor Relations",
-  "Jobs",
-  "Ways to Watch",
-  "Terms of Use",
-  "Privacy",
-  "Cookie Preferences",
-  "Corporate Information",
-  "Speed Test",
-  "Legal Notices",
-  "Netflix Originals",
+  'FAQ',
+  'Help Center',
+  'Account',
+  'Media Center',
+  'Investor Relations',
+  'Jobs',
+  'Ways to Watch',
+  'Terms of Use',
+  'Privacy',
+  'Cookie Preferences',
+  'Corporate Information',
+  'Speed Test',
+  'Legal Notices',
+  'Netflix Originals',
 ];
 
 export default function Footer() {

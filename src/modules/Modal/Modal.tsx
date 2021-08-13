@@ -1,5 +1,5 @@
-import ReactDOM from "react-dom";
-import "./Modal.scss";
+import ReactDOM from 'react-dom';
+import './Modal.scss';
 
 type ModalProps = {
   isOpenModal: boolean;
@@ -7,7 +7,7 @@ type ModalProps = {
 };
 
 export default function Modal({ isOpenModal, changeStateModal }: ModalProps) {
-  const modalBox = document.createElement("div");
+  const modalBox = document.createElement('div');
   document.body.append(modalBox);
   const changeModal = () => changeStateModal(!isOpenModal);
 
@@ -16,7 +16,6 @@ export default function Modal({ isOpenModal, changeStateModal }: ModalProps) {
       <div className="modalBox">
         <div className="modalBody">
           <form className="modalForm">
-            <label className="modalHeader"> Sign In</label>
             <input
               className="inputDataUser"
               type="text"
@@ -29,7 +28,7 @@ export default function Modal({ isOpenModal, changeStateModal }: ModalProps) {
               name="password"
               placeholder="password"
             />
-            <div className="btnSignIn start" onClick={changeModal}>
+            <div role = "button" tabIndex={0} className="btnSignIn start" onClick={changeModal} onKeyDown={changeModal}>
               Sign In
             </div>
           </form>
