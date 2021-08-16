@@ -6,10 +6,10 @@ import Modal from '../../modules/Modal';
 import SearchResults from '../SearchResults/SearchResults';
 import { ContentSection, FAQ } from '../../modules/Content';
 
-export default function App() {
+export default function MainPage() {
   return (
     <BrowserRouter>
-      <div className='  wrapper'>
+      <div className='wrapper'>
         <Header />
         <Route path='/' exact component={ContentSection} />
         <Route path='/' exact component={FAQ} />

@@ -23,10 +23,10 @@ module.exports = {
   rules: {
     'react-hooks/rules-of-hooks': 'error', // Используйте хуки только на верхнем уровне, Вызывайте хуки только из React-функций
     'react-hooks/exhaustive-deps': 'warn', // массив зависимостей не должен быть пустым
-    'no-unused-vars': 'off', 
+    'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'warn', // все переменные должны быть использованы (было off)
     'no-use-before-define': 'off', // объявлять переменные и функции перед их использованием
-    '@typescript-eslint/no-use-before-define': ['off'], // 
+    '@typescript-eslint/no-use-before-define': ['off'], //
     'react/react-in-jsx-scope': 'off',
     // allow jsx syntax in js files (for next.js project)
     semi: 'off',
@@ -37,8 +37,7 @@ module.exports = {
     'react/jsx-filename-extension': [
       'error',
       {
-        // extensions: ['.tsx', '.jsx'],
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
     ],
     'import/extensions': [
@@ -53,10 +52,10 @@ module.exports = {
     'import/prefer-default-export': 'off', // можно использовать export, а не export default
     '@typescript-eslint/prefer-interface': 'off', // литеральное объявление
     'array-bracket-spacing': 'warn', // без пробелов вначале и конце массива
-    "quotes": ["warn", "single"], // используем одинарные кавычки (добавил)
+    quotes: ['warn', 'single'], // используем одинарные кавычки (добавил)
     'object-curly-spacing': 'warn', // запрещает интервалы внутри фигурных скобок
     '@typescript-eslint/explicit-function-return-type': 'off', // не требует явного возврата типов для функций и методов класса
-    '@typescript-eslint/explicit-module-boundary-types': 'off',// не требует явного возврата типов
+    '@typescript-eslint/explicit-module-boundary-types': 'off', // не требует явного возврата типов
     '@typescript-eslint/ban-ts-comment': 'warn',
     '@typescript-eslint/no-var-requires': 'warn', // Запрещает использование операторов require, кроме операторов импорта.
     'array-callback-return': 'warn', // обязательно return из методов функций

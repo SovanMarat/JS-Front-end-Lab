@@ -1,4 +1,4 @@
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route, BrowserRouter, Redirect } from 'react-router-dom';
 import MainPage from './Pages/MainPage/MainPage';
 import SearchResults from './Pages/SearchResults/SearchResults';
 
@@ -7,6 +7,7 @@ export default function App() {
     <BrowserRouter>
       <Route path='/' exact component={MainPage} />
       <Route path='/search-results' exact component={SearchResults} />
+      <Redirect to='/' />
     </BrowserRouter>
   );
 }
