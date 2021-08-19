@@ -1,0 +1,16 @@
+.testPage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  font-size: 10rem;
+  z-index: 1000;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

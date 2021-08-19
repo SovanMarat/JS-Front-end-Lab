@@ -1,40 +1,25 @@
 import ReactDOM from 'react-dom';
+import { NavLink } from 'react-router-dom';
 import './Modal.scss';
 
-type ModalProps = {
-  isOpenModal: boolean;
-  changeStateModal: (isOpenModal: boolean) => void;
-};
-
-export default function Modal({ isOpenModal, changeStateModal }: ModalProps) {
+export default function Modal() {
   const modalBox = document.createElement('div');
   document.body.append(modalBox);
-  const changeModal = () => changeStateModal(!isOpenModal);
 
   return ReactDOM.createPortal(
-    <div className="wrapperModal">
-      <div className="modalBox">
-        <div className="modalBody">
-          <form className="modalForm">
-            <input
-              className="inputDataUser"
-              type="text"
-              name="name"
-              placeholder="name"
-            />
-            <input
-              className="inputDataUser"
-              type="text"
-              name="password"
-              placeholder="password"
-            />
-            <div role = "button" tabIndex={0} className="btnSignIn start" onClick={changeModal} onKeyDown={changeModal}>
-              Sign In
-            </div>
+    <div className='wrapperModal'>
+      <div className='modalBox'>
+        <div className='modalBody'>
+          <form className='modalForm'>
+            <input className='inputDataUser' type='text' name='name' placeholder='name' />
+            <input className='inputDataUser' type='text' name='password' placeholder='password' />
+            <NavLink to='/'>
+              <div className='btnSignIn start'>Sign In</div>
+            </NavLink>
           </form>
         </div>
       </div>
     </div>,
-    modalBox
+    modalBox,
   );
 }

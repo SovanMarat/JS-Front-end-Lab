@@ -1,32 +1,25 @@
 import './Footer.scss';
-
-const listFooter: string[] = [
-  'FAQ',
-  'Help Center',
-  'Account',
-  'Media Center',
-  'Investor Relations',
-  'Jobs',
-  'Ways to Watch',
-  'Terms of Use',
-  'Privacy',
-  'Cookie Preferences',
-  'Corporate Information',
-  'Speed Test',
-  'Legal Notices',
-  'Netflix Originals',
-];
+import { Route, BrowserRouter, NavLink } from 'react-router-dom';
+import { footerList } from './footerDataList';
+import TestPage from '../../Pages/placeholderPage';
 
 export default function Footer() {
   return (
-    <footer className="footer">
-      <div className="footer__title">
-        <ul className="first-list">
-          {listFooter.map((textList) => (
-            <li key={textList.toString()}>{textList}</li>
-          ))}
-        </ul>
-      </div>
-    </footer>
+    <BrowserRouter>
+      <footer className='footer'>
+        <div className='footer__title'>
+          <ul className='first-list'>
+            {footerList.map(textList => (
+              <div key={textList.name.toString()}>
+                <li>
+                  <NavLink to={textList.href}>{textList.name}</NavLink>
+                </li>
+                <Route path={textList.href} component={TestPage} />
+              </div>
+            ))}
+          </ul>
+        </div>
+      </footer>
+    </BrowserRouter>
   );
 }

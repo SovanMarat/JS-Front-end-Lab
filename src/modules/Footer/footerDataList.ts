@@ -1,0 +1,16 @@
+export const footerList = [
+  { name: 'FAQ', href: '/FAQ' },
+  { name: 'Help Center', href: '/help-center' },
+  { name: 'Account', href: '/account' },
+  { name: 'Media Center', href: '/media-center' },
+  { name: 'Investor Relations', href: '/investor-relations' },
+  { name: 'Jobs', href: '/jobs' },
+  { name: 'Ways to Watch', href: '/ways-to-watch' },
+  { name: 'Terms of Use', href: '/terms-of-use' },
+  { name: 'Privacy', href: '/privacy' },
+  { name: 'Cookie Preferences', href: '/cookie-preferences' },
+  { name: 'Corporate Information', href: '/corporate-information' },
+  { name: 'Speed Test', href: '/speed-test' },
+  { name: 'Legal Notices', href: '/legal-notices' },
+  { name: 'Netflix Originals', href: '/netflix-originals' },
+];
