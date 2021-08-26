@@ -1,74 +1,139 @@
-.wrapperModal {
+$btn_red: #e50914;
+$btn_red-hover: #f73a44;
+$dark-one:rgba(0, 0, 0, 0.8);
+$dark-two:rgba(0, 0, 0, 0.5);
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper-modal {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  @include flex-center;
+  // 
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: $dark-two;
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
   z-index: 1050;
+
+  &-form {
+    width: 30%;
+    height: 75%;
+    border-radius: 5px;
+    background: $dark-one;
+  }
+}
+
+.modal {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.modalForm {
-  display: flex;
+  //
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+  width: 100%;
 
-.modalBox {
-  width: 30%;
-  height: 75%;
-  border-radius: 5px;
-  background: rgba(0, 0, 0, 0.8);
-}
-.modalForm {
-  margin: 50px 10px;
-}
-.modalHeader {
-  width: 80%;
-  display: flex;
-  align-items: flex-start;
-  font-size: 32px;
-  margin: 30px 0;
-  font-weight: 600;
-}
+  &-header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 
-.start {
-  width: 80%;
-  margin: 30px 0;
-  height: 48px;
-  border-radius: 5px;
-  font-weight: 500;
-}
+    &__btn-close {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      //
+      width: 25px;
+      height: 23px;
+      border-radius: 3px;
+      margin: 3px;
+      background-color: $btn_red;
+      cursor: pointer;
 
-.inputDataUser {
-  width: 80%;
-  height: 48px;
-  margin: 15px 0;
-  border-radius: 5px;
-  padding: 10px;
-  color: rgb(2, 2, 2);
+      &:hover {
+        background-color: $btn_red-hover;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__msg {
+    font-style: italic;
+    text-align: center;
+  }
+
+  &__title-form {
+    margin: 25px 5px 0 5px;
+    font-size: 2rem;
+  }
+
+  &__login-or-register {
+    cursor: pointer;
+    text-decoration: underline;
+    margin: 25px;
+
+    &:hover {
+      color: cadetblue;
+    }
+  }
+
+  &-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //
+    flex-direction: column;
+    width: 100%;
+    margin: 20px 10px 0px;
+
+    &__input {
+      width: 80%;
+      height: 45px;
+      margin: 15px 0;
+      border-radius: 5px;
+      padding: 10px;
+      color: rgb(2, 2, 2);
+    }
+
+    &__btn-ok {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      //
+      width: 50%;
+      margin: 30px 0;
+      height: 48px;
+      border-radius: 5px;
+      font-weight: 500;
+      background-color: $btn_red;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $btn_red-hover;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 1024px) {
-  .modalBox {
+  .wrapper-modal-form {
     width: 55%;
     height: 85%;
-    border-radius: 5px;
-    background: rgba(0, 0, 0, 0.8);
   }
 }
 
 @media screen and (max-width: 756px) {
-  .modalBox {
+  .wrapper-modal-form {
     width: 95%;
     height: 95%;
-    border-radius: 5px;
-    background: rgba(0, 0, 0, 0.8);
   }
 }
