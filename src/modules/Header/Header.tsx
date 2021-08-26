@@ -12,9 +12,11 @@ export default function Header() {
     <div className='wrapper-films'>
       <div className='wrapper-films_dark'>
         <div className='header'>
-          <div className='logo' />
+        <NavLink to='/'>
+          <div className='header__logo' />
+          </NavLink>
           <NavLink to='/authorization'>
-            <div className='btnSignIn'>Sign In</div>
+            <div className='header__btn-sign'>Sign In</div>
           </NavLink>
         </div>
         <main className='main'>
@@ -22,7 +24,9 @@ export default function Header() {
             <h1 className='movies-subscription__title'>{content.title}</h1>
             <h3 className='movies-subscription__subtitle'>{content.subtitle}</h3>
             <NavLink to='/search-results'>
-              <div className='btn_search'>{content.btnSearch}</div>
+              <button type='button' className='movies-subscription__btn-search'>
+                {content.btnSearch}
+              </button>
             </NavLink>
           </div>
         </main>

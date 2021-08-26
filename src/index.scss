@@ -1,9 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.wrapper {
+  background-color: #222;
+  overflow-x: hidden;
+}
+
 .testPage {
   position: absolute;
   top: 0;
   left: 0;
   background-color: black;
-  font-size: 10rem;
+  font-size: 1rem;
   z-index: 1000;
 }
 
@@ -14,3 +26,7 @@ a {
     text-decoration: none;
   }
 }
+
+// #root {
+//   position: relative;
+// }

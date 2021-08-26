@@ -1,71 +1,108 @@
-$colorBtn: #e50914;
-
-.movies-subscription a {
-  color: aliceblue;
-  text-decoration: none;
-}
-
-.movies-subscription a:hover {
-  text-decoration: none;
-}
+$btn_red: #e50914;
+$btn_red-hover: #f73a44;
 
 .header {
   display: flex;
   justify-content: space-between;
   padding: 30px 60px;
+
+  &__logo {
+    background-image: url(../../img/Netflix_2015_logo.svg);
+    background-size: cover;
+    width: 170px;
+    height: 45px;
+  }
+
+  &__btn-sign {
+    background-color: $btn_red;
+    width: 84px;
+    height: 34px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $btn_red-hover;
+      text-decoration: none;
+    }
+  }
 }
-.logo {
-  background-image: url(../../img/Netflix_2015_logo.svg);
+
+.wrapper-films {
+  background-image: url(../../img/wr_footer.jpg);
   background-size: cover;
-  width: 170px;
-  height: 45px;
+
+  &_dark {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.264);
+    box-shadow: inset 10px 10px 130px 70px black;
+  }
 }
 
-a .btnSignIn {
-  background-color: $colorBtn;
-  width: 84px;
-  height: 34px;
-  border-radius: 3px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-.btnSignIn:hover {
-  background-color: #f73a44;
-  text-decoration: none;
+.main {
+  width: 100%;
+  height: 100%;
 }
 
-.btn_search {
-  background-color: #e50914;
-  font-size: 1.6rem;
+.movies-subscription {
+  max-width: 100%;
+  height: 100vh;
+  padding-bottom: 5px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 350px;
-  height: 84px;
-  cursor: pointer;
-  transition: 0.3s;
-  margin: 7rem 1rem;
-}
 
-.btn_search:hover {
-  background-color: #f73a44;
+  &__title {
+    max-width: 740px;
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  &__subtitle {
+    padding: 15px;
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
+  &__subsubtitle {
+    padding: 15px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  &__btn-search {
+    background-color: $btn_red;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: 84px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 7rem 1rem;
+
+    &:hover {
+      background-color: $btn_red-hover;
+    }
+  }
 }
 
 @media screen and (max-width: 460px) {
   .header {
     padding: 30px 25px;
-  }
-
-  .logo {
-    width: 140px;
-    height: 38px;
-  }
-
-  .btnSignIn {
-    width: 55px;
-    height: 30px;
+    &__logo {
+      width: 140px;
+      height: 38px;
+    }
+    &__btn-sign {
+      width: 55px;
+      height: 30px;
+    }
   }
   .btn_search {
     width: 250px;
