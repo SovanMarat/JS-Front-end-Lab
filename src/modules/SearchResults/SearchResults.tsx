@@ -2,17 +2,10 @@ import { useState, useEffect, useRef } from 'react';
 import './SearchResults.scss';
 import Header from '../Header-search/Header-search';
 import { genres } from './genres';
-import ScrollToTop from '../../utils/scrollTop';
+import data from './data.json';
 
 export default function SearchResults() {
-  ScrollToTop();
-  const URL_poster = 'https://image.tmdb.org/t/p/w500/';
   const inputSearch = useRef<HTMLInputElement>(null);
-  const sort = {
-    title: 'Sort by rating',
-    min: 'min',
-    max: 'max',
-  };
 
   const [arrMovies, setArrMovies] = useState([
     {
@@ -62,16 +55,15 @@ export default function SearchResults() {
     value === 'min' && setArrMovies([...arrMovies].sort((a, b) => a.vote_average - b.vote_average));
     value === 'max' && setArrMovies([...arrMovies].sort((a, b) => b.vote_average - a.vote_average));
   };
+
   useEffect(() => {
     searchQuery && setValueState('Movie not found');
   }, [arrMovies]);
-  //
 
   // search
   useEffect(() => {
     setArrMovies(arrMoviesTemp.filter(e => e.original_title.toLowerCase().includes(searchQuery.toLowerCase())));
   }, [searchQuery]);
-  //
 
   useEffect(() => {
     const getMovies = async () => {
@@ -84,9 +76,7 @@ export default function SearchResults() {
         release_date: string;
         genre_ids: any;
       }> = [];
-      const myKey = '06827c062dca82a3f481f2c048248167';
-      const URL = `https://api.themoviedb.org/3/discover/movie?api_key=${myKey}&language=en-US&page=${page}`;
-      // const URL_genre = `https://api.themoviedb.org/3/genre/movie/list?api_key=${myKey}&language=en-US&page=${page}`; // жанры
+      const URL = `https://api.themoviedb.org/3/discover/movie?api_key=${data.myKey}&language=en-US&page=${page}`;
       const response = await fetch(URL, {
         method: 'GET',
         headers: {
@@ -106,6 +96,7 @@ export default function SearchResults() {
       }
     };
     getMovies();
+    window.scrollTo(0, 0);
   }, [page]);
 
   return (
@@ -121,7 +112,7 @@ export default function SearchResults() {
             onChange={changeSearchInput}
           />
           <div className='sort'>
-            <div className='sort__title'>{sort.title}</div>
+            <div className='sort__title'>{data.title}</div>
             <div
               className='sort__btn'
               role='button'
@@ -129,7 +120,7 @@ export default function SearchResults() {
               onClick={() => setSort('min')}
               onKeyDown={() => setSort('min')}
             >
-              {sort.min}
+              {data.min}
             </div>
             <div
               className='sort__btn'
@@ -138,10 +129,13 @@ export default function SearchResults() {
               onClick={() => setSort('max')}
               onKeyDown={() => setSort('max')}
             >
-              {sort.max}
+              {data.max}
             </div>
           </div>
-          <div>Hi, {currentUser}!</div>
+          <div>
+            {data.hi}
+            {currentUser}
+          </div>
         </div>
         {arrMovies.length > 1 || (arrMovies.length === 1 && arrMovies[0].original_title !== 'StartState') ? (
           <div className='movies'>
@@ -155,15 +149,19 @@ export default function SearchResults() {
                 onKeyDown={showMovie}
               >
                 <div className='movie'>
-                  <img src={`${URL_poster}${e.poster_path}`} alt={e.original_title} className='poster' />
+                  <img src={`${data.URL_poster}${e.poster_path}`} alt={e.original_title} className='poster' />
                   <div className='movie__title'>{e.original_title}</div>
                   <div className='movie__vote'>{e.vote_average}</div>
                   <div className='movie__overview'>
                     <div>{e.overview}</div>
-                    <div className='movie__original-language'>original language: {e.original_language}</div>
-                    <div className='movie__release-date'>release date: {e.release_date}</div>
+                    <div className='movie__original-language'>
+                      {data.original_language} {e.original_language}
+                    </div>
+                    <div className='movie__release-date'>
+                      {data.release_date} {e.release_date}
+                    </div>
                     <pre className='movie__genre-title'>
-                      {'genre: '}
+                      {data.genre}
                       {e.genre_ids.map((el, index) => (
                         <>
                           <div key={`${e.original_title}${el}`} className='movie__genre-ids'>
@@ -189,7 +187,7 @@ export default function SearchResults() {
             onClick={prevPage}
             onKeyDown={prevPage}
           >
-            prev
+            {data.prev}
           </div>
           <div
             className={`movies-nav__btn ${page > 20 && `btn-disabled`}`}
@@ -198,7 +196,7 @@ export default function SearchResults() {
             onClick={nextPage}
             onKeyDown={nextPage}
           >
-            next
+            {data.next}
           </div>
         </div>
       </div>

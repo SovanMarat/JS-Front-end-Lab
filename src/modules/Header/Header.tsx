@@ -12,8 +12,8 @@ export default function Header() {
     <div className='wrapper-films'>
       <div className='wrapper-films_dark'>
         <div className='header'>
-        <NavLink to='/'>
-          <div className='header__logo' />
+          <NavLink to='/'>
+            <div className='header__logo' />
           </NavLink>
           <NavLink to='/authorization'>
             <div className='header__btn-sign'>Sign In</div>

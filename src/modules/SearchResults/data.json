@@ -1,0 +1,13 @@
+{
+  "title": "Sort by rating",
+  "min": "min",
+  "max": "max",
+  "URL_poster": "https://image.tmdb.org/t/p/w500/",
+  "prev": "prev",
+  "next": "next",
+  "hi": "Hi, ",
+  "myKey": "06827c062dca82a3f481f2c048248167",
+  "original_language": "original language:",
+  "release_date": "release date: ",
+  "genre": "genre: "
+}

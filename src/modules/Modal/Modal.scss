@@ -1,7 +1,7 @@
 $btn_red: #e50914;
 $btn_red-hover: #f73a44;
-$dark-one:rgba(0, 0, 0, 0.8);
-$dark-two:rgba(0, 0, 0, 0.5);
+$dark-one: rgba(0, 0, 0, 0.8);
+$dark-two: rgba(0, 0, 0, 0.5);
 
 @mixin flex-center {
   display: flex;
@@ -10,11 +10,7 @@ $dark-two:rgba(0, 0, 0, 0.5);
 }
 
 .wrapper-modal {
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
   @include flex-center;
-  // 
   position: absolute;
   top: 0;
   left: 0;
@@ -34,10 +30,7 @@ $dark-two:rgba(0, 0, 0, 0.5);
 }
 
 .modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  //
+  @include flex-center;
   flex-direction: column;
   width: 100%;
 
@@ -47,10 +40,7 @@ $dark-two:rgba(0, 0, 0, 0.5);
     justify-content: flex-end;
 
     &__btn-close {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      //
+      @include flex-center;
       width: 25px;
       height: 23px;
       border-radius: 3px;
@@ -86,10 +76,7 @@ $dark-two:rgba(0, 0, 0, 0.5);
   }
 
   &-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    //
+    @include flex-center;
     flex-direction: column;
     width: 100%;
     margin: 20px 10px 0px;
@@ -104,10 +91,7 @@ $dark-two:rgba(0, 0, 0, 0.5);
     }
 
     &__btn-ok {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      //
+      @include flex-center;
       width: 50%;
       margin: 30px 0;
       height: 48px;
