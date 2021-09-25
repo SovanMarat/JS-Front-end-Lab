@@ -2,13 +2,16 @@ import { faqContent } from './faqContent';
 
 export default function FAQ() {
   return (
-    <div className='BoxFAQ'>
-      <div className='titleFAQ'>Frequently Asked Questions</div>
-      {faqContent.map(({ title }) => (
-        <div key={title} className='cardFAQ'>
-          {title}
-          <div className='plusFAQ'>+</div>
-        </div>
+    <div className='box-FAQ'>
+      <div className='title-FAQ'>Frequently Asked Questions</div>
+      {faqContent.map(({ title, content }) => (
+          <details key={title} className='card-FAQ'>
+            <summary className='card-FAQ__title'>
+              {title}
+              <small>+</small>
+            </summary>
+            <div className='card-FAQ__content'>{content}</div>
+          </details>
       ))}
     </div>
   );
